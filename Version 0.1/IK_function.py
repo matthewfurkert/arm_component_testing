@@ -5,9 +5,9 @@ from math import sqrt, pi, acos, cos, tan, atan2, sin
 # https://www.youtube.com/watch?v=RH3iAmMsolo&ab_channel=Woolfrey
 
 # Define the length of each arm segment
-l1 = 50
-l2 = 50
-l3 = 30
+l1 = 91.2
+l2 = 99
+l3 = 115
 gamma = pi/2
 
 # Calculating the servo angles
