@@ -13,12 +13,12 @@ try:
     while True:
         pwm.duty_cycle += 0.01 * direction
         pwm.duty_cycle = round(pwm.duty_cycle, 2) #round function is used to keep it to two decimal places
-        if pwm.duty_cycle == 0.2: #reaching the maximum the direction is reversed
+        if pwm.duty_cycle >= 0.125: #reaching the maximum the direction is reversed
             direction = -1
-        elif pwm.duty_cycle == 0.0: ##reaching the minimum the direction is reversed
+        elif pwm.duty_cycle <= 0.025: ##reaching the minimum the direction is reversed
             direction = 1
-            
-        time.sleep(0.05) 
+        print("Current duty cycle:", pwm.duty_cycle)    
+        time.sleep(0.5) 
 
 except KeyboardInterrupt:
     pass

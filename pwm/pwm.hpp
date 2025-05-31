@@ -109,6 +109,7 @@ public:
     }
 
     ~PWM() {
+        disable();
         close();
     }
 
