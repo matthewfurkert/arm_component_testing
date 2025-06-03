@@ -10,7 +10,6 @@ bus = smbus2.SMBus(3)
 
 def ReadRawAngle(): # Read angle (0-360 represented as 0-4096)
   read_bytes = bus.read_i2c_block_data(DEVICE_AS5600, 0x0C, 2)
-  print(read_bytes)
   return (read_bytes[0]<<8) | read_bytes[1]
 
 def ReadMagnitude(): # Read magnetism magnitude
