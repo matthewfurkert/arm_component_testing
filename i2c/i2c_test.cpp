@@ -11,12 +11,15 @@ int main() {
         
         // Set address to 0x12
         uint8_t device_address = 0x12;
-        Sensor sensor(device_address);
-        std::cout << "Created sensor with address 0x" << std::hex << (int)device_address << std::dec << std::endl;
-        
-        // Call get_angle_radians
-        double angle = sensor.get_angle_radians(*bus);
-        std::cout << "Angle: " << angle << " radians" << std::endl;
+        Joint joint1(*bus, device_address);
+        std::cout << "Created joint with address 0x" << std::hex << (int)device_address << std::dec << std::endl;
+
+        // // Call get_angle_radians without passing bus
+        // double angle = joint1.get_angle_radians();
+        // std::cout << "Angle: " << angle << " radians" << std::endl;
+
+        // Write motor direction
+        joint1.write_motor_direction(0x01);
         
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << std::endl;
